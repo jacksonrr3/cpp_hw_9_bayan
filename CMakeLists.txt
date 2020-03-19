@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.7)
+cmake_minimum_required(VERSION 3.12)
 
 project(bayan VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
@@ -6,7 +6,7 @@ include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
 find_package(Threads)
-find_package(Boost COMPONENTS program_options filesystem REQUIRED)
+find_package(Boost COMPONENTS system REQUIRED)
                               
 set(CMAKE_CXX_STANDARD 17)
 
