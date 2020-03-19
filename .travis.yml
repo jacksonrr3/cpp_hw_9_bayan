@@ -5,8 +5,8 @@ compiler: gcc
 addons:
   apt:
     packages:
-      - gcc-7
-      - g++-7
+      - gcc-8
+      - g++-8
       - cmake
       - libboost-filesystem-dev
       - libboost-program-options-dev
