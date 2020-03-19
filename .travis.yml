@@ -8,6 +8,7 @@ addons:
       - libboost-filesystem-dev
       - libboost-program-options-dev
       - libboost-system-dev
+      - libboost-all-dev
 
 script:
 - cmake .
