@@ -6,7 +6,7 @@ include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
 find_package(Threads)
-find_package(Boost COMPONENTS system REQUIRED)
+find_package(Boost COMPONENTS program-options crc filesystem REQUIRED)
                               
 set(CMAKE_CXX_STANDARD 17)
 
