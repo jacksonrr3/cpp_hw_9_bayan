@@ -6,7 +6,13 @@ addons:
     packages:
     - libboost-all-dev
 
+install:
+  - pip install --upgrade pip --user
+  - pip install conan --user
+  - conan user
+
 script:
+- conan install .
 - cmake .
 - cmake --build .
 - cmake --build . --target package
