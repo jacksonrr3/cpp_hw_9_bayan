@@ -9,9 +9,8 @@ addons:
     - sourceline: 'ppa:mhier/libboost-latest'
     - ubuntu-toolchain-r-test
     packages:
-    - libboost-all-dev
-    - boost1.71
-    - g++-9
+    - boost1.70
+    - g++-8
 env:
   - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
 before_install:
