@@ -58,7 +58,7 @@ public:
 		return (const std::vector<std::string>&)_files;
 	}
 
-	const std::size_t block_size() const {
+	const std::size_t block_size() {
 		return _block_size;
 	}
 
