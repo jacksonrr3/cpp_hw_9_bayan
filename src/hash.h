@@ -19,7 +19,7 @@ public:
 class Hash {
 public:
 	Hash() = default;
-	~Hash() = default;
+	virtual ~Hash() = default;
 
 	virtual std::size_t count(const std::string&) const = 0;
 };
