@@ -4,8 +4,6 @@ language: cpp
 compiler: gcc
 addons:
   apt:
-    sources:
-
     packages:
     - libboost-all-dev
     - libboost-test-dev
