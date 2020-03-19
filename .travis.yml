@@ -4,6 +4,7 @@ compiler: clang
 addons:
   apt:
     packages:
+    - libboost-all-dev
 
 script:
 - cmake .
