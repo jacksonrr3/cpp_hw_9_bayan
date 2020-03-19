@@ -5,10 +5,12 @@ compiler: gcc
 addons:
   apt:
     sources:
+    - sourceline: 'ppa:mhier/libboost-latest'
     - ubuntu-toolchain-r-test
     packages:
     - libboost-all-dev
-    - g++-8
+    - boost1.71
+    - g++-9
 env:
   - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
 before_install:
