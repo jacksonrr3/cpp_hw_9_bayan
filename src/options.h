@@ -23,9 +23,9 @@ public:
 		_desc.add_options()
 			("help,h", "Help screen")
 			("files", value<std::vector<std::string>>()->
-				multitoken()->zero_tokens()->composing(), "файлы для сканирования")
-			("size", value<std::size_t>()->default_value(0), "размер блока для чтения файлов")
-			("hash", value<std::string>()->default_value(""), "алгоритм хэширования");
+				multitoken()->zero_tokens()->composing(), "С„Р°Р№Р»С‹ РґР»СЏ СЃРєР°РЅРёСЂРѕРІР°РЅРёСЏ")
+			("size", value<std::size_t>()->default_value(0), "СЂР°Р·РјРµСЂ Р±Р»РѕРєР° РґР»СЏ С‡С‚РµРЅРёСЏ С„Р°Р№Р»РѕРІ")
+			("hash", value<std::string>()->default_value(""), "Р°Р»РіРѕСЂРёС‚Рј С…СЌС€РёСЂРѕРІР°РЅРёСЏ");
 	}
 
 	void parse_comm_line_opt(int argc, const char* argv[]) {
