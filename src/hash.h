@@ -1,6 +1,5 @@
 #pragma once
 #include <boost/functional/hash.hpp>
-#include <boost/container/vector.hpp>
 #include <boost/crc.hpp>
 #include <string>
 #include <memory>
