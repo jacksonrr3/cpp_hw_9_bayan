@@ -9,7 +9,6 @@ int main(int argc, const char* argv[]) {
 	{
 		Options opt;
 		opt.parse_comm_line_opt(argc, argv);
-
 		File_Handler fh(opt);
 		fh.run();
 
