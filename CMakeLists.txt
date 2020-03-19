@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.7)
 project(bayan VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 find_package(Threads)
-find_package(Boost COMPONENTS program_options filesystem crc container REQUIRED)
+find_package(Boost COMPONENTS program_options filesystem REQUIRED)
                               
 set(CMAKE_CXX_STANDARD 17)
 
