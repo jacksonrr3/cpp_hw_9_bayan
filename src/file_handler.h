@@ -16,7 +16,7 @@ class File_Handler {
 
 public:
 	File_Handler(const Options& opt) :_opt(opt) {}
-	
+
 	void run() {
 		prepare();
 		while (_files.size() > 1) {
@@ -36,41 +36,41 @@ private:
 	void prepare() {
 		std::for_each(_opt._files.begin(), _opt._files.end(), [this](auto str) {
 			auto it = _files.emplace(str, FileDescriptor(str, _opt.block_size()));
-			if (it.second){
+			if (it.second) {
 				it.first->second.open_file();
 			}
 			});
 	}
 
 	void read_block() {
-		for (auto it = _files.begin(); it != _files.end();){
+		for (auto it = _files.begin(); it != _files.end();) {
 			if (it->second.is_end()) {
-				if (it->second.get_size()) { 
-					_res.emplace(it->first); 
+				if (it->second.get_size()) {
+					_res.emplace(it->first);
 				}
 				it = _files.erase(it);
 			}
-			else { 
-				it->second.set_double(false);
-				it->second.add_hash(_opt.do_hash(it->second.read_file())); 
+			else {
+				it->second.set_duplicate(false);
+				it->second.add_hash(_opt.do_hash(it->second.read_file()));
 				it++;
 			}
 		}
 	}
-	
+
 	void do_compare() {
 		auto it = _files.begin();
 		for (; it != _files.end(); ) {
-			if (!it->second.is_double()) {
+			if (!it->second.is_duplicate()) {
 				auto jt = it;
 				++jt;
 				for (; jt != _files.end(); jt++) {
 					if (it->second == jt->second) {
-						it->second.set_double(true);
-						jt->second.set_double(true);
+						it->second.set_duplicate(true);
+						jt->second.set_duplicate(true);
 					}
 				}
-				if (!it->second.is_double()) {
+				if (!it->second.is_duplicate()) {
 					it = _files.erase(it);
 					continue;
 				}
@@ -79,5 +79,7 @@ private:
 		}
 	}
 };
+
+
 
 
