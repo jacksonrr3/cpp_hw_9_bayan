@@ -9,13 +9,12 @@ addons:
     - sourceline: 'ppa:mhier/libboost-latest'
     - ubuntu-toolchain-r-test
     packages:
-    - boost1.70
-    - g++-8
-env:
-  - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
-before_install:
-  - eval "${MATRIX_EVAL}"
+    - gcc-7
+    - g++-7
+    - libboost-all-dev
 script:
+- export CC=gcc-7
+- export CXX=g++-7
 - cmake .
 - cmake --build .
 - cmake --build . --target package
