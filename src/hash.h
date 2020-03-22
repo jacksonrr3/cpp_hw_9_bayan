@@ -8,10 +8,10 @@
 class Bayan_exeption : public boost::exception {
 	std::string _message;
 public:
-	Bayan_exeption(const std::string& s):_message(s) {}
+	Bayan_exeption(const std::string& s) :_message(s) {}
 
-	const char* what() const noexcept { 
-		return _message.c_str(); 
+	const char* what() const noexcept {
+		return _message.c_str();
 	}
 };
 
@@ -51,7 +51,7 @@ public:
 			return std::make_shared<Boost_Crc_32>();
 		}
 		else {
-			throw(Bayan_exeption("wrong hash name (Hash_factory::make_hash_obj)"));
+			std::cout << "wrong hash name (enter boost_hash or boost_crc32)" << std::endl;;
 			return 0;
 		}
 	}
