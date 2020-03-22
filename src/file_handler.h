@@ -40,6 +40,28 @@ private:
 				it.first->second.open_file();
 			}
 			});
+		
+		//проверка на совпадение размера файлов. Файлы с уникальным размером удаляются из списка поиска. 
+		for (auto it = _files.begin(); it != _files.end(); ) {
+			if (!it->second.is_duplicate()) {
+				for (auto jt = std::next(it, 1); jt != _files.end(); jt++) {
+					if (it->second.get_size() == jt->second.get_size()) {
+						it->second.set_duplicate(true);
+						jt->second.set_duplicate(true);
+					}
+
+				}
+				if (!it->second.is_duplicate()) {
+					it = _files.erase(it);
+				}
+				else {
+					it++;
+				}
+			}
+			else {
+				it++;
+			}
+		}
 	}
 
 	void read_block() {
