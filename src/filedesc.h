@@ -33,7 +33,7 @@ public:
 		}
 		else {
 			_file_size = fs;
-			if (fs % _buff_size) { ++_file_size; }
+			//if (fs % _buff_size) { ++_file_size; }
 		}
 
 		return res;
@@ -70,13 +70,13 @@ public:
 		return _is_duplicate;
 	}
 
-	friend bool operator<(const FileDescriptor& first, const FileDescriptor& second);
+	//friend bool operator<(const FileDescriptor& first, const FileDescriptor& second);
 	friend bool operator==(const FileDescriptor& first, const FileDescriptor& second);
 };
-
+/*
 bool operator<(const FileDescriptor& first, const FileDescriptor& second) {
 	return first._hash < second._hash;
-}
+}*/
 
 bool operator==(const FileDescriptor& first, const FileDescriptor& second) {
 	return (first._hash == second._hash) && (first._file_size == second._file_size);
