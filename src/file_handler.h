@@ -29,7 +29,7 @@ public:
 private:
 	void print_res() {
 		for (auto& s : _res) {
-			std::cout << absolute(path(s), "/") << std::endl;
+			std::cout << absolute(path(s), ".") << std::endl;
 		}
 	}
 
