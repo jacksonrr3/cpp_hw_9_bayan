@@ -10,7 +10,6 @@ int main(int argc, const char* argv[]) {
 		opt.parse_comm_line_opt(argc, argv);
 		
 		File_Handler fh(opt);
-
 		fh.run();
 
 		std::cout << "test" <<std::endl;
